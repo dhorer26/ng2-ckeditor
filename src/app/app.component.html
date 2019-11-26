@@ -1,14 +1,14 @@
 <form role="form" #myForm="ngForm" accept-charset="UTF-8" novalidate>
-  <ckeditor #myckeditorControl="ngModel" name="myckeditor" [(ngModel)]="myckeditor" [config]="{uiColor: '#99000'}" [readonly]="false"
-    (change)="onChange($event)" (editorChange)="onEditorChange($event)" (ready)="onReady($event)"
+  <ckeditor #myckeditorControl="ngModel" name="myckeditor" [(ngModel)]="myckeditor" [config]="{uiColor: '#87ffe9'}"
+    [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)" (ready)="onReady($event)"
     (focus)="onFocus($event)" (blur)="onBlur($event)" (contentDom)="onContentDom($event)"
     (fileUploadRequest)="onFileUploadRequest($event)" (fileUploadResponse)="onFileUploadResponse($event)"
     (paste)="onPaste($event)" (drop)="onDrop($event)" debounce="500">
   </ckeditor>
 
   <button [disabled]="myForm.invalid" class="btn btn-primary">Save</button>
-{{myckeditorControl.value |json}}
-
-{{myForm.value |json}}
+  {{myckeditorControl.value |json}}
+  <br />
+  {{myForm.value |json}}
 </form>
 <div [innerHTML]="mycontent"></div>

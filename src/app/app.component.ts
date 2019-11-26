@@ -9,8 +9,10 @@ export class AppComponent implements OnInit {
   ckeConfig: any;
   mycontent: string;
   log = '';
-  @ViewChild('myckeditor')
+  @ViewChild('myckeditor', {static: true})
   ckeditor: any;
+  onDrop: any;
+  myckeditor: any;
 
   constructor() {
     this.mycontent = `<p>My html content</p>`;
@@ -26,7 +28,6 @@ export class AppComponent implements OnInit {
 
   onChange($event: any): void {
     console.log(this.mycontent);
-
     // this.log += new Date() + "<br />";
   }
 
@@ -36,31 +37,31 @@ export class AppComponent implements OnInit {
   }
 
 
-  onEditorChange() {
+  onEditorChange($event: any) {
     console.log('click');
   }
 
-  onReady() {
+  onReady($event: any) {
     console.log('click');
   }
 
-  onFocus() {
+  onFocus($event: any) {
     console.log('click');
   }
 
-  onContentDom() {
+  onContentDom($event: any) {
     console.log('click');
   }
 
-  onFileUploadRequest() {
+  onFileUploadRequest($event: any) {
     console.log('click');
   }
 
-  onFileUploadResponse() {
+  onFileUploadResponse($event: any) {
     console.log('click');
   }
 
-  onBlur() {
+  onBlur($event: any) {
     console.log('click');
   }
 
